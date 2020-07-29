@@ -6,6 +6,8 @@ const SpeakerDetail = React.memo(({
     lastName,
     favorite,
     bio,
+    sat,
+    sun,
     onHeartFavoriteHandler
 }) => {
     //console.log(`SpeakerDetail:${id} ${firstName} ${lastName} ${favorite}`);
@@ -23,7 +25,15 @@ const SpeakerDetail = React.memo(({
                         data-sessionid={id}
                         className={favorite ? "heartredbutton" : "heartdarkbutton"}
                         onClick={e => {
-                            onHeartFavoriteHandler(e, !favorite);
+                            onHeartFavoriteHandler(e, {
+                                id,
+                                firstName,
+                                lastName,
+                                favorite,
+                                bio,
+                                sat,
+                                sun
+                            });
                         }}
                     />
                     <span>
