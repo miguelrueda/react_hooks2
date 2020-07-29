@@ -1,24 +1,8 @@
 import React, { useState } from "react";
+import App from "../src/App";
 
-const InputElement = () => {
+function index() {
+    return <App pageName="Home" />;
+}
 
-    const [inputText, setInputText] = useState("");
-    const [historyList, setHistoryList] = useState([]);
-
-    return <div><input placeholder="Enter some text"
-        onChange={(e) => {
-            setInputText(e.target.value);
-            setHistoryList([...historyList, e.target.value])
-        }} /><br />
-        {inputText}
-        <hr />
-        <br />
-        <ul>
-            {historyList.map((h) => {
-                return <div>{h}</div>}
-            )}
-        </ul>
-    </div>
-};
-
-export default InputElement;
+export default index;
